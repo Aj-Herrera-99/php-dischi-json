@@ -1,9 +1,6 @@
 <?php
-$json_text = file_get_contents('./data.json');
-$albums = json_decode($json_text, true);
-// var_dump($albums);
+session_start()
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,25 +18,17 @@ $albums = json_decode($json_text, true);
         <h1 class="text-center text-4xl">My CDs List</h1>
     </header>
 
-    <main>
+    <main class="flex">
 
-        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-fit mx-auto my-6">
-            <?php
-            foreach ($albums as $album) {
-                echo "
-                <div class=\"rounded-md overflow-hidden bg-[#25282d] w-fit scale-95 hover:scale-100 transition-transform \">
-                    <div class=\"max-w-[300px] aspect-[11/12]\">
-                        <img width=\"300\" src=\"{$album['image_url']}\" alt=\"album\" class=\"w-full h-full object-cover\">
-                    </div>
-                    <div class=\"flex flex-col gap-1 p-2 text-center\">
-                        <span>{$album['title']}</span>
-                        <span>{$album['author']}</span>
-                        <span>{$album['year']}</span>
-                    </div>
-                </div>
-                ";
-            }
-            ?>
+        <nav class="w-[300px] bg-zinc-800 border-r p-4 relative">
+            <div class="fixed w-[250px]">
+                <h2 class="text-2xl">Add Album</h2>
+                <?php require_once './form.php' ?>
+            </div>
+        </nav>
+
+        <section class=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-fit my-6 mx-auto">
+            <?php require_once './cards.php' ?>
         </section>
     </main>
 
