@@ -1,4 +1,4 @@
-<form action="server.php" method="post" class="my-4 flex flex-col gap-4">
+<form action="./server.php" method="post" class="my-4 flex flex-col gap-4">
     <input id="title" name="title" type="text" placeholder="Album title" required
         class="border rounded-sm bg-zinc-100 p-1 text-black placeholder:text-zinc-600">
     <input id="author" name="author" type="text" placeholder="Author name" required

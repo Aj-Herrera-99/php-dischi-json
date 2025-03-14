@@ -1,6 +1,7 @@
 <?php
-session_start()
+session_start();    // apro sessione
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 

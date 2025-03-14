@@ -1,10 +1,10 @@
 <?php
-$json_text = file_get_contents('./data.json');
-$albums = json_decode($json_text, true);
-
-$_SESSION['albums'] = $albums;
+$json_text = file_get_contents('./data.json');  // leggo json
+$albums = json_decode($json_text, true);    // decodifico json
+$_SESSION['albums'] = $albums;              // salvo in sessione albums
 
 foreach ($albums as $album) {
+    // template card
     echo "
         <div class=\"rounded-md overflow-hidden bg-[#25282d] w-fit scale-95 hover:scale-100 transition-transform \">
             <div class=\"max-w-[300px] aspect-[11/12] bg-zinc-700\">
@@ -16,5 +16,5 @@ foreach ($albums as $album) {
                 <span>{$album['year']}</span>
             </div>
         </div>
-        ";
+    ";
 }
