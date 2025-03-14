@@ -21,7 +21,20 @@ $albums = json_decode($json_text, true);
         <h1 class="text-center text-4xl">My CDs List</h1>
     </header>
 
-    <main></main>
+    <main class="p-4">
+        <div class="rounded-md overflow-hidden bg-[#25282d] w-fit">
+            <div class="max-w-[300px] aspect-[11/12]">
+                <img width="300" src=<?php echo $albums[0]['image_url'] ?> alt="album"
+                    class="w-full h-full object-cover">
+            </div>
+            <div class="flex flex-col gap-1 p-2 text-center">
+                <span><?php echo $albums[0]['title']  ?></span>
+                <span><?php echo $albums[0]['author']  ?></span>
+                <span><?php echo $albums[0]['year']  ?></span>
+
+            </div>
+        </div>
+    </main>
 
 </body>
 
