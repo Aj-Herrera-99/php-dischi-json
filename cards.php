@@ -1,7 +1,7 @@
 <?php
 $json_text = file_get_contents('./data.json');  // leggo json
 $albums = json_decode($json_text, true);    // decodifico json
-$_SESSION['albums'] = $albums;              // salvo in sessione albums
+// $_SESSION['albums'] = $albums;              // salvo in sessione albums
 
 foreach ($albums as $album) {
     // template card

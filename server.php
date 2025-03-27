@@ -1,13 +1,16 @@
 <?php
-session_start();    // apro sessione
+// session_start();    // apro sessione
 
-// se albums non esiste in sessione, redirect to index
-if (!isset($_SESSION['albums'])) {
-    header('Location: ./index.php');
-}
+// // se albums non esiste in sessione, redirect to index
+// if (!isset($_SESSION['albums'])) {
+//     header('Location: ./index.php');
+// }
 
-$albums = $_SESSION['albums'];  // salvo albums in var
-// var_dump($albums);
+// $albums = $_SESSION['albums'];  // salvo albums in var
+// // var_dump($albums);
+
+$json_text = file_get_contents('./data.json');  // leggo json
+$albums = json_decode($json_text, true);    // decodifico json
 
 // dati inviati dal form in POST
 $title = $_POST['title'];
